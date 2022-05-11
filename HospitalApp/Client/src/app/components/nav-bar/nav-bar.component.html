@@ -1,0 +1,19 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">HospitalApp</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a routerLink="/patient" class="p-2 text-dark">Patients</a>
+    <a routerLink="/filter" class="p-2 text-dark" href="#">Filter</a>
+    <a routerLink="/doctors" class="p-2 text-dark" href="#">Doctors</a>
+  </nav>
+  <div *ngIf="!isUserAuthenticated()">
+    <a routerLink="/login" class="btn btn-outline-primary mr-2">Login</a>
+    <a routerLink="/register" class="btn btn-outline-primary">Register</a>
+  </div>
+  <a 
+    *ngIf="isUserAuthenticated()" 
+    class="btn btn-outline-primary mr-2"
+    (click)="logout()"
+  >
+    Logout
+  </a>
+</div>
